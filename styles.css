@@ -1,0 +1,461 @@
+body{
+    body {
+        overflow-x: hidden;
+        margin: 0px;
+    }
+}
+header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+#inst-name {
+   text-align: center;
+
+
+}
+
+#top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#top-header img {
+    height: 50px;
+    margin-right: 20px;
+}
+
+#top-header h1 {
+    margin: 0;
+   
+    
+}
+
+@media only screen and (max-width: 768px) {
+    #top-header {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/*the nav bar*/
+   nav {
+            display: flex;
+            justify-content: center; /* Equal spacing between items */
+            padding: 10px;
+            background-color: #0056b3;
+            margin-left: 0%;
+            margin-right: 0%;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            padding: 5px 10px;
+        }
+
+        nav a:hover {
+            background-color:  #004085;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        @media only screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+        }
+
+/*ALL SECTIONS CONATINING INFORMATION WILL SHARE THESE PROPERTIES*/
+.info-container{
+    padding: 60px 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(21, 91, 148, 0.1);
+    overflow: hidden; /* Prevent overflow within the info-container */
+    background-color: #07466b;
+}
+.info-container h2 {
+    color: black; /* Darker grey for the header text */
+    margin-bottom: 15px;
+}
+
+.info-container p {
+    color: black; /* Medium grey for the paragraph text */
+}
+
+.info-container:hover {
+    background-color: #186896; /* Darken the grey background on hover */
+    box-shadow: 0 4px 10px rgba(7, 7, 7, 0.15); /* Increase shadow on hover for a 3D effect */
+}
+
+/*WHAT HAPPENDS TO THE CARDS*/
+/* Ensure .Card.slider holds all cards horizontally */
+
+.card {
+    flex: 0 0 33.3333%;
+    box-sizing: border-box;
+    padding: 10px;
+    min-width: 200px; /* Set a minimum width for cards */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+}
+.card-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-slider {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure cards stay in a single row */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+.card-slider::-webkit-scrollbar{
+    height: 10px;
+}
+.card-slider::-webkit-scrollbar-thumb {
+    background-color: #0056b3;
+    border-radius: 10px;
+}
+.course-slider::-webkit-scrollbar-track {
+    background-color: #f8f9fa;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-content {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    transition: background-color 0.8s ease, box-shadow 0.8s ease;
+    transition: transform 0.2s ease-in-out;
+}
+.card-content a{
+    text-decoration: none;
+    color: #0056b3;
+}
+
+.card-content:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+}
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .card-slider {
+        flex-wrap: wrap;
+        overflow-x: hidden;
+    }
+    .card {
+        flex-basis: calc(100% / 2); /* Adjust the number of columns for medium screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-slider {
+        flex-basis: 100%;
+    }
+    .card {
+        flex-basis: 100%; /* Make cards full-width on small screens */
+    }
+}
+
+.section-card {
+    background-color: #07466b; /* Light grey background color */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid #ddd; /* Slight border for definition */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.section-card h2 {
+    color: #333; /* Darker grey for the header text */
+    margin-bottom: 15px;
+}
+
+.section-card p {
+    color: #555; /* Medium grey for the paragraph text */
+}
+
+.section-card:hover {
+    background-color: #186896; /* Darken the grey background on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Increase shadow on hover for a 3D effect */
+}
+.about-card {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/*PROGRAM OFFERED SECTION*/
+.course-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+}
+
+.course-card {
+    flex: 0 0 300px;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    scroll-snap-align: start;
+    background-color: #17a2b8;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-card h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #022d53;
+}
+
+.course-card p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #000;
+}
+
+.course-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.course-container::-webkit-scrollbar-thumb {
+    background-color: #0056b3;
+    border-radius: 10px;
+}
+
+.course-container::-webkit-scrollbar-track {
+    background-color: #f8f9fa;
+}
+.course-card {
+    transition: transform 0.2s ease-in-out; /* Adjust transition duration and easing as needed */
+  }
+  
+  .course-card:hover {
+    transform: scale(1.05); /* Adjust the scale factor as desired */
+  }
+  .course-card img{
+    height: 80px;
+    text-align: center;
+    display: block;
+    align-items: center;
+  }
+  /*DONE WITH THE COSE OFFERED CARDS*/
+  
+  /*TABLE OF PROGRAMS*/
+  .Program-fees {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #f2f2f2; /* Light gray background */
+    border: 1px solid #ddd;
+  }
+  
+  .Program-fees th, .Program-fees td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .Program-fees th {
+    background-color: #f0f0f0; /* Light gray header background */
+  }
+  .Program-fees thead td{
+      font-weight: bold;
+  }
+  
+  .Program-fees tbody tr:hover {
+    background-color: #186896; /* Light gray hover background */
+  }
+  .table-container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    margin: 0 auto;
+}
+
+/*STUFF properties*/
+        .staff-card {
+            display: inline-block;
+            width: 200px;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa; /* Light gray background for a clean look */
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #dee2e6; /* Adding a subtle border */
+        }
+        
+        .staff-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid #83acd8; /* Adding a border to the image that matches the header */
+        }
+        
+        .staff-card h3 {
+            color: #007bff; /* Matching the text color to the header color */
+            margin-bottom: 5px;
+        }
+        
+        .staff-card p {
+            color: #6c757d; /* A soft gray color for the position text */
+        }
+        
+        .staff-card:hover {
+            transform: translateY(-5px); /* Slightly lift the card on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Increase shadow on hover for a 3D effect */
+            background-color: #e9ecef; /* Lighten the background on hover */
+        }
+
+        footer {
+            background-color: #032b55;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .partners, .social-media {
+            margin: 20px 0;
+        }
+
+        .partners a, .social-media a {
+            margin: 0 15px;
+            display: inline-block;
+        }
+
+        .partner-logo, .social-icon {
+            width: 40px;
+            height: auto;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .social-media a {
+            margin: 0 10px; 
+            color:white;
+            text-decoration: none;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-info div {
+            margin: 5px;
+        }
+
+        .contact-info i {
+            margin-right: 5px;
+        }
+
+        .partner-logo, .social-icon {
+            width: 40px;
+            height: auto;
+        }
+        .d-flex-justify-content-center-flex-wrap{
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around ;
+            margin: 0, 10PX;
+            margin-bottom: 5px;
+            
+        }
+        .social-media a :hover{
+            color: #c5d627;
+
+        }
+/************************/
+        .course-container-skills{
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .course-card-skills{
+            flex: 0 0 300px;
+            margin-right: 20px;
+            border-radius: 10px;
+            color: white;
+            scroll-snap-align: start;
+            background-color: #17a2b8;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .course-card-skills img{
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            width: 100%;
+            height: 50%;
+
+        }
+        .course-card-skills {
+            transition: transform 0.2s ease-in-out; /* Adjust transition duration and easing as needed */
+          }
+          
+        .course-card-skills:hover {
+            transform: scale(1.05); /* Adjust the scale factor as desired */
+          }
+          .course-container-skills::-webkit-scrollbar {
+            height: 10px;
+        }
+        
+        .course-container-skills::-webkit-scrollbar-thumb {
+            background-color: #0056b3;
+            border-radius: 10px;
+        }
+        
+        .course-container-skills::-webkit-scrollbar-track {
+            background-color: #f8f9fa;
+        }
+        .contact-info a{
+            text-decoration: none;
+            color: white;
+        }
+
+
+        
