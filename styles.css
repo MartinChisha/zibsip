@@ -121,7 +121,10 @@ header {
     display: flex;
     flex-wrap: nowrap; /* Ensure cards stay in a single row */
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin; /* For Firefox */
 }
 .card-slider::-webkit-scrollbar{
     height: 10px;
@@ -130,7 +133,7 @@ header {
     background-color: #0056b3;
     border-radius: 10px;
 }
-.course-slider::-webkit-scrollbar-track {
+.card-slider::-webkit-scrollbar-track {
     background-color: #f8f9fa;
 }
 
@@ -218,8 +221,25 @@ header {
 .course-container {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     padding: 20px 0;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin; 
+}
+
+
+.course-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.course-container::-webkit-scrollbar-thumb {
+    background-color: #0056b3;
+    border-radius: 10px;
+}
+
+.course-container::-webkit-scrollbar-track {
+    background-color: #f8f9fa;
 }
 
 .course-card {
@@ -243,19 +263,6 @@ header {
     font-size: 1em;
     line-height: 1.5;
     color: #000;
-}
-
-.course-container::-webkit-scrollbar {
-    height: 10px;
-}
-
-.course-container::-webkit-scrollbar-thumb {
-    background-color: #0056b3;
-    border-radius: 10px;
-}
-
-.course-container::-webkit-scrollbar-track {
-    background-color: #f8f9fa;
 }
 .course-card {
     transition: transform 0.2s ease-in-out; /* Adjust transition duration and easing as needed */
@@ -413,8 +420,11 @@ header {
         .course-container-skills{
             display: flex;
             overflow-x: auto;
+            overflow-y: hidden;
             padding: 20px 0;
             scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
         }
         
         .course-card-skills{
